@@ -46,13 +46,13 @@ function App() {
       className={
         darkMode
           ? "dark bg-[#010101] text-[#f1f1f1] min-h-screen py-5 px-10 lg:px-20"
-          : "bg-blue-200 min-h-screen py-5 px-10 lg:px-20"
+          : "bg-blue-200 text-[#010101] min-h-screen py-5 px-10 lg:px-20"
       }
     >
       {/* Dark mode toggle button*/}
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="mb-4 bg-[#010101] text-white px-3 py-1 rounded border border-[#f1f1f1] dark:border-[#f1f1f1]"
+        className="mb-4 bg-[#010101] text-[#f1f1f1] Dark:bg-[#f1f1f1] Dark:text-[#010101] px-3 py-1 rounded border Dark:border-[#f1f1f1]"
       >
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
@@ -64,13 +64,13 @@ function App() {
         type="text"
         placeholder="Search..."
         onChange={(e) => setSearchText(e.target.value)}
-        className=" border border-[#f1f1f1] py-2 px-5 rounded w-full md:w-[50%] lg:w-[30%] rounded-4xl mb-4 placeholder-gray-500 dark:placeholder-white dark:bg-[#010101]"
+        className=" border dark:border-[#f1f1f1] py-2 px-5 w-full md:w-[50%] lg:w-[30%] rounded-4xl mb-4 :placeholder-[#f1f1f1]"
       />
 
       {/* users */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
         {filteredUsers.map((user) => (
-          <div key={user.id} className="shadow p-4 rounded border rounded-4xl">
+          <div key={user.id} className="shadow p-4 border rounded-4xl">
             <p className="font-bold text-lg mb-1">{user.id}.</p>
             <h2 className="font-bold text-lg mb-2">{user.name}</h2>
             <p>Email: {user.email}</p>
